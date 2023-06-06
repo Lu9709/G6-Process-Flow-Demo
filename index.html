@@ -452,17 +452,21 @@
    * @description 缩放
    */
   $("#zoomOut").bind("click", () => {
+    console.log('zoomOut', zoom)
     zoom = zoom * (1 - zoomToRate)
     zoom = zoom < minZoom ? minZoom : zoom
+    graph.fitView();
     graph.zoomTo(zoom, viewCenterPort)
   })
   /**
    * @description 放大
    */
   $("#zoomIn").bind("click", () => {
+    console.log('zoomIn', zoom)
     zoom = zoom * (1 + zoomToRate)
     zoom = zoom > maxZoom ? maxZoom : zoom
     if (zoom === maxZoom) return
+    graph.fitView();
     graph.zoom(zoom, viewCenterPort)
   })
   /**
