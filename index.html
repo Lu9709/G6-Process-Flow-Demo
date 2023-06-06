@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>demo</title>
+  <link rel = "shorcut icon" href = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpERDBCNjlCMjM4RjIxMUVBODMwNzg2NzdBNzhBMDEyMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpERDBCNjlCMzM4RjIxMUVBODMwNzg2NzdBNzhBMDEyMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkREMEI2OUIwMzhGMjExRUE4MzA3ODY3N0E3OEEwMTIzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkREMEI2OUIxMzhGMjExRUE4MzA3ODY3N0E3OEEwMTIzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+I7U6ugAAA5BJREFUeNo8U21MW1UYfu5Hb0tp4VIYhVbcGE4m7cbWCujcCmpwGmaykE2N2ZyfifEH0cWPqJk/NFlMjD/8pXH7YeKiTufXMotjboMwY+QzKbBZKB0fpa2MUtrS9d7be+/x0Anvr5P3fZ/3vOd5nsMkVjIgBDQIeI6DILAwGk37aOphGailBd0IBBngsiTlhpW8Bk1bAzBgaJIhd9BYSqZRIlofURjmk+tTUU90aAj6ygoYngdfWQlnYyO2b9l0hcvn38hmpYBNtBZwzMDQGNKrt7HH19wVT8ufXXz7feTPn8MmqLBV28EYBMgmM9I1teD3H0DrkYMwrN4+ODQY+LVMFOke4NH5wltPfPXpO/7v3nwPdYuzqG9wITUXQayvH0VOB8zFxeAUGRHaLR99Be2vHoPP9+yOkf5fxhne6haGh35PqDNTFqdYBHtzS2E1ORJB5NuzCJ78GJZt94AVjLCqecQ0Fdu+PI2YuXxy33ZvPV7uOvmiLOVJZCFONkKWNo7R7m7SU3sv6fU0k76Wh8iAeye5eOwlkqO1xw4fb2VbvO4OwcijqqoCG0FvS05PYvC1LqyGpiFU2KAqCoiuQaGckNFhcPF/0bbf18FX2yvWpALHcrRBx/DYPzgTKYf+7gk8NfY9gkIxjFWVYM3F0FSV9lDVEglI4WnY73ZuZTUKWo/R6zN48oM+fP63CLmhDaUCYHZUFzTXMqvQqFoMHaBmVqCBXbMO2Omb8zfXB4wEY4jPcbCry5jaewTjW3ejcjYEnrLPGagfpBzKZkcRKq2B5GnCwsREmPX3/OVfH6AQ6jmhCLl4GLEcg2+eP4eBXW0wJGZgXQyhKD2PM6b7ceP106gycfjp7G9+BuwWU9+1C4u+B13WHy+P49CHk+Ac5bCbGZhrXRAtAuqD3ShNRhHIixiwuTB3qgnBP65NtrZ31tPlKlDnauoIjfsvqJoG23M9yCyZAJGDxQAYKHlZSzWUtEofvIzARzuxwyZDdLY2pm5FAxxb0oDlSGDq0tVA6pnDBx4//vR9SGk6UlkFGUmFnpdwlyGFow8I6D/hhllagsvbeSg+f6OXEzdTckQv2BIvZUBEuWNP+88/nB8hRKFqEbJI3XIr97+jlCw59cXXV3ize9fa1pzYVMAyXKkHd/4lCy0Zp4OycNTtbn90r8dXt9leo+lED4YXwpd6B68moxN/AjZwZdR0ulog/j8BBgDyU5YZuEdMqgAAAABJRU5ErkJggg=="/>
+  <link rel="stylesheet" type="text/css" href="styles/primary.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+</head>
+
+<style type="text/css">
+    .card-wrapper {
+      /*width: 100%;*/
+      height: calc(100% - 2px);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .card-wrapper:hover {
+      border-color: #2b75c8;
+      background: rgba(43,117,200,.05);
+    }
+    .card-column-direction {
+      flex-direction: column;
+    }
+    .padding-left-10 {
+      padding-left: 10px;
+    }
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .content-extra-config-hidden {
+      display: none;
+    }
+    .content-extra-config {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 5px;
+    }
+    .content-extra-config-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+    .content-extra-icon {
+      width: 12px;
+      height: 12px;
+    }
+    .content-extra-config-label {
+      padding-left: 5px;
+    }
+    .content-label {
+    }
+    .process-flow {
+      position: relative;
+    }
+    .process-flow-default {
+      width: 900px;
+    }
+    .process-flow-fullScreen {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+    }
+    .tree-svg-legends {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+      padding: 10px;
+      line-height: 24px;
+      cursor: pointer;
+    }
+    .tree-svg-legend-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+    .legend-img {
+      padding-right: 10px;
+    }
+    .process-operate {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      display: flex;
+    }
+    .process-operate-item {
+      background: #ffffff;
+      border: 1px solid #e6e6e6;
+      width: 36px;
+      height: 36px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 4px;
+      cursor: pointer;
+    }
+    .process-operate-item img {
+        user-select: none;
+    }
+    #container {
+      width: 100%;
+      height: 100%;
+      background-color: #fafafa;
+      cursor: pointer;
+      user-select: none;
+    }
+</style>
+<body>
+  <div class="process-flow process-flow-default">
+    <div class="process-operate">
+      <div id="zoomIn" class="process-operate-item"><img alt="" src="./assets/svg/zoomIn.svg"></div>
+      <div id="zoomOut" class="process-operate-item"><img alt="" src="./assets/svg/zoomOut.svg"></div>
+      <div id="reset" class="process-operate-item"><img alt="" src="./assets/svg/reset.svg"></div>
+      <div id="fullScreen" class="process-operate-item"><img alt="" src="./assets/svg/fullScreen.svg"></div>
+    </div>
+    <div id="container"></div>
+    <div class="tree-svg-legends">
+      <div class="tree-svg-legend-wrapper">
+        <img class="legend-img" alt="" src="./assets/svg/process.svg">
+        <span>进程文件</span>
+      </div>
+      <div class="tree-svg-legend-wrapper">
+        <img class="legend-img" alt="" src="./assets/svg/create-process.svg">
+        <span>创建进程</span>
+      </div>
+      <div class="tree-svg-legend-wrapper">
+        <img class="legend-img" alt="" src="./assets/svg/release-file.svg">
+        <span>释放文件</span>
+      </div>
+      <div class="tree-svg-legend-wrapper">
+        <img class="legend-img" alt="" src="./assets/svg/net.svg">
+        <span>域名/IP</span>
+      </div>
+      <div class="tree-svg-legend-wrapper">
+        <img class="legend-img" alt="" src="./assets/svg/dangerSig.svg">
+        <span>高危行为</span>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/antv-g6/4.8.9/g6.min.js"></script>
+<script type="text/javascript">
+  /**
+   * @description iconType对应文件名
+   * @type {{process: string, release: string, start: string, create: string, danger: string, net: string}}
+   */
+  const iconMap = {
+    'start': './assets/svg/start.svg',
+    'process': './assets/svg/process.svg',
+    'danger': './assets/svg/dangerSig.svg',
+    'create': './assets/svg/create-process.svg',
+    'net': './assets/svg/net.svg',
+    'release': './assets/svg/release-file.svg'
+  }
+
+  /**
+   * @description iconSize的width和height
+   * @param iconType
+   * @return {{width: number, height: number}}
+   */
+  const iconSize = (iconType) => {
+    switch (iconType) {
+      case 'start':
+        return { width: 41, height: 56 }
+        break
+      case 'process':
+        return { width: 36, height: 36 }
+        break
+      case 'release':
+        return { width: 16, height: 16 }
+        break
+      case 'net':
+        return { width: 16, height: 16 }
+        break
+      default:
+        return { width: 36, height: 36 }
+    }
+  }
+
+  /**
+   * @description 计算label的长度
+   * @param text
+   * @param options
+   * @return {number}
+   */
+  const getActualWidthOfChars = (text, options = {}) => {
+    const { size = 12, family = "Microsoft YaHei" } = options;
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.font = `${size}px ${family}`;
+    const metrics = ctx.measureText(text);
+    const actual = Math.abs(metrics.actualBoundingBoxLeft) + Math.abs(metrics.actualBoundingBoxRight);
+    return Math.max(metrics.width, actual);
+  }
+
+  /**
+   * @description 创建额外配置的html
+   * @param arr
+   * @return {string}
+   */
+  const createExtraConfigHtml = (arr) => {
+    let html = ``
+    for (let i = 0; i < arr.length; i++) {
+      const item = arr[i]
+      const { iconType, label } = item
+      html += `
+        <div class="content-extra-config">
+          <img alt="" src="${ iconMap[iconType] || 'process.svg' }" class="content-extra-icon" />
+          <span class="${label ? 'content-extra-config-label' : 'content-extra-config-hidden'}">${label}</span>
+        </div>
+      `
+    }
+    return html
+  }
+
+  /**
+   * @description 创建自定义节点标签
+   */
+  G6.registerNode('tree-node', {
+    draw: (cfg, group) => {
+      const labelWidth = getActualWidthOfChars(cfg.label)
+      const { width: iconWidth, height: iconHeight } = iconSize(cfg.iconType)
+      const extraConfigVisible = cfg.extraConfig && cfg.extraConfig .length > 0
+      const extraConfigHtml = extraConfigVisible && createExtraConfigHtml(cfg.extraConfig)
+      const shape = group.addShape('dom', {
+        attrs: {
+          x: (iconWidth + labelWidth + 10) / -2,
+          y: (iconHeight + 10) / -2,
+          width: iconWidth + labelWidth + 10 + 20,
+          // height: iconHeight + 10,
+          height: cfg.iconType === 'start' ?  iconHeight + 10 : 50,
+          html: `
+           <div class="card-wrapper ${cfg.iconType === 'start' ? 'card-column-direction': ''}">
+             <div class="icon-wrapper">
+              <img alt="" src="${ iconMap[cfg.iconType] || 'process.svg' }" width="${iconSize(cfg.iconType).width}" height="${iconSize(cfg.iconType).width}" />
+             </div>
+             <div class="content-wrapper ${cfg.iconType === 'start' ? '' : 'padding-left-10'}">
+              <span class="content-label">${cfg.label}</span>
+              <div class="${extraConfigVisible ? 'content-extra-config-wrapper' : 'content-extra-config-hidden'}">${extraConfigHtml}</div>
+             </div>
+           </div>
+          `,
+        },
+        draggable: true,
+      });
+      return shape;
+    },
+  },'single-node');
+
+  let fullScreenToggle = true
+  const data = {
+    id: "1",
+    label: '开始分析',
+    iconType: 'start',
+    children: [
+      {
+        id: "1-1",
+        iconType: 'process',
+        label: '补齐任意位.exe',
+        extraConfig: [
+          {
+            id: '1-1-1~1',
+            iconType: 'create',
+            label: '2',
+          },
+          {
+            id: '1-1-1~2',
+            iconType: 'release',
+            label: '4',
+          },
+          {
+            id: '1-1-1~3',
+            iconType: 'danger',
+            label: '',
+          }
+        ],
+        children: [
+          {
+            id: "1-1-1",
+            label: 'cmd.exe',
+            iconType: 'process'
+          },
+          {
+            id: "1-1-2",
+            label: 'cmd.exe',
+            iconType: 'process',
+            extraConfig: [
+              {
+                id: '1-1-1~1',
+                iconType: 'create',
+                label: '2',
+              }
+            ],
+            children: [
+              {
+                id: "1-1-2-1",
+                label: '补给模块.exe',
+                iconType: 'process',
+                extraConfig: [
+                  {
+                    id: '1-1-6~1',
+                    iconType: 'net',
+                    label: '2',
+                  },
+                  {
+                    id: '1-1-6~2',
+                    iconType: 'danger',
+                    label: '',
+                  }
+                ],
+                children: [
+                  {
+                    id: "1-1-2-1-1",
+                    label: 'hama.e2.luyouxia.net',
+                    iconType: 'net'
+                  },
+                  {
+                    id: "1-1-2-1-2",
+                    label: '123.99.198.201',
+                    iconType: 'net'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: "1-1-3",
+            label: 'krnln.fnr',
+            iconType: 'release',
+          },
+          {
+            id: "1-1-4",
+            label: 'shell.fne',
+            iconType: 'release',
+          },
+          {
+            id: "1-1-5",
+            label: '补全.exe',
+            iconType: 'release',
+          },
+          {
+            id: "1-1-6",
+            label: '补齐模块.exe',
+            iconType: 'release'
+          }
+        ]
+      }
+    ]
+  }
+  const container = document.getElementById('container');
+  const width = container.scrollWidth;
+  const height = container.scrollHeight || 600;
+  const graph = new G6.TreeGraph({
+    container: 'container',
+    width,
+    height,
+    modes: {
+      default: ['drag-canvas', 'drag-node'],
+    },
+    renderer: 'svg',
+    fitCenter: true, // 对齐到画布中心
+    fitView: true, // 是否开启画布自适应
+    autoPaint: false,
+    defaultNode: {
+      type: 'tree-node',
+    },
+    // 节点在各状态下的样式
+    defaultEdge: {
+      type: 'cubic-horizontal',
+    },
+    // 布局配置
+    layout: {
+      type: 'mindmap',
+      direction: 'H',
+      getHeight: () => {
+        return 20;
+      },
+      getWidth: () => {
+        return 20;
+      },
+      getVGap: () => {
+        return 20;
+      },
+      getHGap: () => {
+        return 100;
+      },
+      getSide: () => {
+        return 'right';
+      },
+    },
+  });
+
+  graph.data(data);
+  graph.render();
+
+  const defaultZoom = graph.getZoom();
+  let zoom = defaultZoom
+  const viewCenterPort = graph.getViewPortCenterPoint()
+  const zoomToRate = 0.1
+  /**
+   * @description 最大缩放率
+   * @type {number}
+   */
+  const maxZoom = 1.3
+  /**
+   * @description 最小缩放率
+   * @type {number}
+   */
+  const minZoom = 0.5
+
+  if (typeof window !== 'undefined') {
+    window.onresize = () => {
+      if (!graph || graph.get('destroyed')) return;
+      if (!container || !container.scrollWidth || !container.scrollHeight) return;
+      graph.changeSize(container.scrollWidth, container.scrollHeight);
+    };
+  }
+
+  /**
+   * 操作栏配置
+   */
+  /**
+   * @description 复位
+   */
+  $("#reset").bind( "click", () => {
+    zoom = defaultZoom
+    graph.zoomTo(defaultZoom)
+    graph.fitCenter();
+  });
+  /**
+   * @description 缩放
+   */
+  $("#zoomOut").bind("click", () => {
+    zoom = zoom * (1 - zoomToRate)
+    zoom = zoom < minZoom ? minZoom : zoom
+    graph.zoomTo(zoom, viewCenterPort)
+  })
+  /**
+   * @description 放大
+   */
+  $("#zoomIn").bind("click", () => {
+    zoom = zoom * (1 + zoomToRate)
+    zoom = zoom > maxZoom ? maxZoom : zoom
+    if (zoom === maxZoom) return
+    graph.zoom(zoom, viewCenterPort)
+  })
+  /**
+   * @description 全屏/取消全屏
+   */
+  $("#fullScreen").bind("click", () => {
+    if (fullScreenToggle) {
+      $("#fullScreen > img").attr('src', './assets/svg/minimize.svg')
+      $('.process-flow').removeClass('process-flow-default')
+      $('.process-flow').addClass('process-flow-fullScreen')
+      fullScreenToggle = false
+    } else {
+      $("#fullScreen > img").attr('src', './assets/svg/fullScreen.svg')
+      $('.process-flow').removeClass('process-flow-fullScreen')
+      $('.process-flow').addClass('process-flow-default')
+      fullScreenToggle = true
+    }
+  })
+</script>
+
+</html>
